@@ -64,11 +64,13 @@ export default class SelectMultiple extends Component {
     const rows = this.getRowData(this.props)
     this.setState({ dataSource: rows })
   }
- 
-  static getDerivedStateFromProps(props, state) {
-    const rows = this.getRowData(props)
-    this.setState({ dataSource: rows })
-  }
+
+    static getDerivedStateFromProps(props, state) {
+    if (props.currentRow !== state.lastRow) {
+      return {
+        dataSource: props.currentRow,
+      };
+    }
 
   getRowData ({ items, selectedItems }) {
     items = items.map(this.toLabelValueObject)
