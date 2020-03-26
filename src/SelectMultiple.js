@@ -67,9 +67,9 @@ export default class SelectMultiple extends Component {
 
     static getDerivedStateFromProps(props, state) {
     if (props.currentRow !== state.lastRow) {
-      return {
-        dataSource: props.currentRow,
-      };
+      
+      this.setState({ dataSource: props.currentRow })
+
     }
 
   }
