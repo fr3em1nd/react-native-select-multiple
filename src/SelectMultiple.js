@@ -72,6 +72,8 @@ export default class SelectMultiple extends Component {
       };
     }
 
+  }
+
   getRowData ({ items, selectedItems }) {
     items = items.map(this.toLabelValueObject)
     selectedItems = (selectedItems || []).map(this.toLabelValueObject)
